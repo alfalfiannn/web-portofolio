@@ -1,0 +1,229 @@
+/* ============================================================
+   EXPERIENCE MODULE
+   ============================================================ */
+.experience__timeline {
+    position: relative;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+/* Vertical line */
+.experience__timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--navy-200), transparent);
+    border-radius: 2px;
+}
+
+/* Timeline Item */
+.exp-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.exp-card:last-child {
+    margin-bottom: 0;
+}
+
+/* Dot / Icon */
+.exp-card__dot {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 4px;
+    z-index: 1;
+}
+
+.exp-card__dot-inner {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 4px var(--navy-50), var(--shadow-md);
+    flex-shrink: 0;
+    transition: transform var(--t-base) var(--ease-spring);
+}
+
+.exp-card:hover .exp-card__dot-inner {
+    transform: scale(1.12);
+    box-shadow: 0 0 0 6px var(--navy-100), var(--shadow-lg);
+}
+
+/* Company Logo in Experience Card Dot */
+.exp-card__dot-inner img.exp-card__company-logo {
+    width: 32px;
+    height: 300px;
+    object-fit: contain;
+    border-radius: 0;
+}
+
+/* Card Body */
+.exp-card__body {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 28px 28px 24px;
+    border: 1px solid var(--gray-200);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--t-base) var(--ease-out);
+}
+
+.exp-card__body:hover {
+    border-color: var(--navy-200);
+    box-shadow: var(--shadow-lg);
+    transform: translateX(6px);
+}
+
+/* Card Header */
+.exp-card__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.exp-card__title {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--navy-800);
+    letter-spacing: -0.3px;
+}
+
+.exp-card__period {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 14px;
+    background: var(--navy-50);
+    color: var(--navy-500);
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--navy-100);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.exp-card__company-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.exp-card__company {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy-500);
+}
+
+.exp-card__meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--gray-400);
+    font-weight: 500;
+}
+
+.exp-card__meta svg {
+    flex-shrink: 0;
+}
+
+.exp-card__divider {
+    width: 4px;
+    height: 4px;
+    background: var(--gray-300);
+    border-radius: 50%;
+}
+
+/* Duties */
+.exp-card__duties {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.exp-card__duty {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--gray-600);
+    line-height: 1.65;
+}
+
+.exp-card__duty::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--navy-400);
+    flex-shrink: 0;
+    margin-top: 8px;
+}
+
+/* Organization Visual */
+.exp-card__visual {
+    margin-top: 10px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 10px solid var(--gray-200);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--t-base) var(--ease-out);
+}
+
+.exp-card__visual:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+.exp-card__image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.exp-card__image-caption {
+    display: block;
+    padding: 10px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--gray-500);
+    background: var(--gray-50);
+    border-top: 1px solid var(--gray-200);
+    text-align: center;
+    letter-spacing: 0.2px;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .experience__timeline::before {
+        left: 28px;
+    }
+
+    .exp-card {
+        grid-template-columns: 72px 1fr;
+    }
+
+    .exp-card__dot-inner {
+        width: 52px;
+        height: 52px;
+    }
+}

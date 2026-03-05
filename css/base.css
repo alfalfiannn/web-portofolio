@@ -1,0 +1,260 @@
+/* ============================================================
+   BASE — Custom Properties, Reset, Utilities, Buttons, Sections
+   ============================================================ */
+
+/* ---------- Custom Properties ---------- */
+:root {
+    /* Color palette */
+    --navy-900: #0A1628;
+    --navy-800: #111D35;
+    --navy-700: #1B2A4A;
+    --navy-600: #243660;
+    --navy-500: #2E4A7A;
+    --navy-400: #4A6FA5;
+    --navy-300: #7B9CC9;
+    --navy-200: #B0C7E4;
+    --navy-100: #D9E5F3;
+    --navy-50: #EEF3FA;
+
+    --white: #FFFFFF;
+    --gray-50: #F8FAFC;
+    --gray-100: #F1F5F9;
+    --gray-200: #E2E8F0;
+    --gray-300: #CBD5E1;
+    --gray-400: #94A3B8;
+    --gray-500: #64748B;
+    --gray-600: #475569;
+    --gray-700: #334155;
+    --gray-900: #0F172A;
+
+    --green-400: #4ADE80;
+    --green-500: #22C55E;
+    --red-500: #EF4444;
+    --amber-500: #F59E0B;
+    --blue-glow: rgba(46, 74, 122, 0.3);
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #1B2A4A 0%, #2E4A7A 50%, #4A6FA5 100%);
+    --gradient-accent: linear-gradient(135deg, #2E4A7A 0%, #4A6FA5 100%);
+    --gradient-hero: linear-gradient(135deg, #F8FAFC 0%, #EEF3FA 30%, #D9E5F3 100%);
+    --gradient-text: linear-gradient(135deg, #1B2A4A, #4A6FA5);
+    --gradient-card: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6));
+    --gradient-glow: radial-gradient(circle, rgba(46, 74, 122, 0.15) 0%, transparent 70%);
+
+    /* Typography */
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+    /* Spacing */
+    --section-py: clamp(80px, 10vw, 120px);
+
+    /* Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 28px;
+    --radius-full: 100px;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(10, 22, 40, 0.04), 0 1px 2px rgba(10, 22, 40, 0.06);
+    --shadow-md: 0 4px 16px rgba(10, 22, 40, 0.06), 0 2px 4px rgba(10, 22, 40, 0.04);
+    --shadow-lg: 0 12px 40px rgba(10, 22, 40, 0.08), 0 4px 12px rgba(10, 22, 40, 0.04);
+    --shadow-xl: 0 24px 64px rgba(10, 22, 40, 0.12), 0 8px 20px rgba(10, 22, 40, 0.06);
+    --shadow-glow: 0 0 40px rgba(46, 74, 122, 0.2);
+    --shadow-card-hover: 0 20px 50px rgba(10, 22, 40, 0.15), 0 8px 16px rgba(10, 22, 40, 0.08);
+
+    /* Transitions */
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --t-fast: 200ms;
+    --t-base: 350ms;
+    --t-slow: 600ms;
+
+    --navbar-h: 76px;
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--navbar-h);
+}
+
+body {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--gray-700);
+    background: var(--white);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+/* ---------- Utility ---------- */
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.text-gradient {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ---------- Section ---------- */
+.section {
+    padding: var(--section-py) 0;
+    position: relative;
+}
+
+.section--alt {
+    background: var(--gray-50);
+}
+
+.section__header {
+    text-align: center;
+    margin-bottom: 56px;
+}
+
+.section__tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 16px;
+    background: var(--navy-50);
+    color: var(--navy-500);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: var(--radius-full);
+    margin-bottom: 16px;
+    border: 1px solid var(--navy-100);
+}
+
+.section__title {
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 800;
+    color: var(--navy-700);
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    margin-bottom: 12px;
+}
+
+.section__subtitle {
+    font-size: 16px;
+    color: var(--gray-500);
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 28px;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all var(--t-base) var(--ease-out);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), transparent);
+    opacity: 0;
+    transition: opacity var(--t-fast);
+}
+
+.btn:hover::before {
+    opacity: 1;
+}
+
+.btn--primary {
+    background: var(--gradient-primary);
+    color: var(--white);
+    box-shadow: 0 4px 15px rgba(27, 42, 74, 0.25);
+}
+
+.btn--primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(27, 42, 74, 0.35);
+}
+
+.btn--ghost {
+    background: transparent;
+    color: var(--navy-700);
+    border-color: var(--gray-300);
+}
+
+.btn--ghost:hover {
+    border-color: var(--navy-500);
+    color: var(--navy-500);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn--full {
+    width: 100%;
+    justify-content: center;
+}
+
+/* ---------- Animations ---------- */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.reveal:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.reveal:nth-child(4) {
+    transition-delay: 0.3s;
+}
